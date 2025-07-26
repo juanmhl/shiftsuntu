@@ -8,7 +8,7 @@ echo "Installing and configuring Bluetooth..."
 # 'bluez-tools' provides command-line tools for Bluetooth.
 # 'pulseaudio-module-bluetooth' is essential for Bluetooth audio to work with PulseAudio (or PipeWire which often uses PulseAudio compatibility).
 # 'blueberry' provides a graphical front-end for managing Bluetooth devices, a quality-of-life improvement.
-sudo apt install -y bluetooth bluez bluez-tools pulseaudio-module-bluetooth blueberry
+sudo apt install -y bluetooth bluez bluez-tools pulseaudio-module-bluetooth blueman
 
 # Turn on Bluetooth service by default and start it now
 echo "Enabling and starting Bluetooth service..."

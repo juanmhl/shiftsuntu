@@ -5,7 +5,7 @@ echo "Configuring Uncomplicated Firewall (UFW) for security..."
 # Install ufw and ufw-docker if not already installed
 # 'ufw' is the firewall itself, 'ufw-docker' handles Docker's interaction with ufw.
 # These are available in Ubuntu's standard repositories.
-sudo apt install -y ufw ufw-docker
+# sudo apt install -y ufw ufw-docker
 
 # Set default policies: deny all incoming, allow all outgoing.
 # This is a secure baseline for a workstation/server.
@@ -33,8 +33,8 @@ echo "Enabling UFW firewall..."
 sudo ufw enable
 
 # Apply Docker protections for UFW. This helps prevent Docker from bypassing UFW rules.
-echo "Applying UFW-Docker protections and reloading UFW..."
-sudo ufw-docker install
+# echo "Applying UFW-Docker protections and reloading UFW..."
+# sudo ufw-docker install
 sudo ufw reload
 
 echo "UFW configured and enabled."

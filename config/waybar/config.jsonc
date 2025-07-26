@@ -221,7 +221,7 @@
     "format-disabled": "󰂲",
     "format-connected": "",
     "tooltip-format": "Devices connected: {num_connections}",
-    "on-click": "blueberry" // This remains as blueberry is now installed by install/04_bluetooth.sh
+    "on-click": "blueman-manager" // This remains as blueman-manager is now installed by install/04_bluetooth.sh
   },
   "pulseaudio": {
     "format": "{icon}",

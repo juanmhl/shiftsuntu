@@ -8,7 +8,17 @@ echo "Installing Sway WM and its core components..."
 # 'swayidle': Sway's idle manager (replaces hypridle).
 # 'swaybg': Sway's background setter.
 # 'swayosd': Sway's On-Screen Display for volume/brightness.
-sudo apt install -y sway swaylock swayidle swaybg swayosd
+sudo apt install -y sway swaylock swayidle swaybg # swayosd
+
+# Ensure the user's Sway config directory exists
+mkdir -p ~/.config/sway/
+
+# Copy the system's default Sway config to your user's config directory
+# We use 'sudo' because /etc/sway/config is owned by root.
+sudo cp /etc/sway/config ~/.config/sway/config
+
+# Ensure the copied config file is owned by your user, so you can edit it without sudo.
+sudo chown $USER:$USER ~/.config/sway/config
 
 # XDG Desktop Portal Backends (Crucial for screen sharing, file pickers, etc.)
 # 'xdg-desktop-portal-wlr': The wlroots-specific backend for XDG Desktop Portal (for Sway).
@@ -17,7 +27,7 @@ sudo apt install -y xdg-desktop-portal-wlr xdg-desktop-portal-gtk
 
 # Polkit Agent (for password prompts for privileged actions)
 # 'polkit-gnome': A widely used Polkit agent, compatible with Sway.
-sudo apt install -y polkit-gnome
+sudo apt install -y lxpolkit # polkit-gnome replacement
 
 # Status Bar
 # 'waybar': A highly customizable Wayland status bar.
@@ -25,7 +35,7 @@ sudo apt install -y waybar
 
 # Notification Daemon
 # 'mako': A lightweight Wayland notification daemon.
-sudo apt install -y mako
+sudo apt install -y mako-notifier
 
 # Screenshot Tool (replaces hyprshot)
 # 'grimblast': A versatile Wayland screenshot tool that combines grim and slurp,
@@ -47,7 +57,7 @@ echo "Installing application launcher 'wofi'..."
 sudo apt install -y wofi
 
 # Calculation Library (compositor-agnostic)
-sudo apt install -y libqalculate # Library for 'qalculate-gtk' or other calculator frontends
+sudo apt install -y qalculate-gtk # Library for 'qalculate-gtk' or other calculator frontends
 
 # Removed:
 # - 'hyprland-qtutils': Not applicable for Sway.

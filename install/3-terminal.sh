@@ -11,7 +11,11 @@ sudo apt install -y wget curl unzip inetutils-tools
 # Try installing 'eza'. If it fails, you'll need to consider adding a PPA or building it,
 # or accept 'lsd' as an alternative (though 'eza' is generally preferred now).
 # 'eza' is available in Ubuntu's universe repository in recent versions (e.g., 22.04 LTS onwards).
-sudo apt install -y fd-find fzf ripgrep zoxide bat jq wl-clipboard fastfetch btop
+sudo apt install -y fd-find fzf ripgrep zoxide bat jq wl-clipboard btop
+# fastfetch specific installation
+sudo add-apt-repository -y ppa:zhangsongcui3371/fastfetch
+sudo apt update -y
+sudo apt install -y fastfetch
 
 # Essential documentation and shell enhancements
 # 'manpages-posix' provides some common man pages.

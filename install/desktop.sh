@@ -2,6 +2,9 @@
 
 echo "Installing essential desktop applications and utilities..."
 
+sudo apt-add-repository universe -y
+sudo apt update -y
+
 # Audio/Brightness Control & Multimedia Framework
 # pipewire-alsa: ALSA compatibility for PipeWire
 # pipewire-jack: JACK compatibility for PipeWire
@@ -17,7 +20,7 @@ sudo apt install -y fcitx5 fcitx5-frontend-gtk3 fcitx5-frontend-qt5 fcitx5-modul
 
 # Wayland Clipboard Persistence
 # Ensures copied content persists even if the source application closes.
-sudo apt install -y wl-clipboard-persist # Note: Package name is wl-clipboard-persist on Ubuntu
+sudo apt install -y clipman # Note: Package name is clipman on Ubuntu
 
 # File Management and Previews
 # 'nautilus' (Files) is the standard GNOME file manager.
@@ -59,18 +62,19 @@ sudo apt install -y pciutils
 
 # Check if kooha is directly available, if not, consider a different approach or manual build.
 # For a "stick to defaults" approach, we'll try kooha first.
-if apt-cache show kooha &>/dev/null; then
-  sudo apt install -y kooha
-  echo "Installed 'kooha' as a Wayland screen recorder."
-else
-  # Fallback for screen recording if kooha is not found in standard repos.
-  # obs-studio is a very powerful but heavy solution.
-  # simpler CLI tools like grim/slurp combined with gstreamer can do video:
-  # sudo apt install -y gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-libav
-  echo "Kooha not found in standard repositories. Consider installing it via Flatpak or another method."
-  echo "Alternatively, for a more feature-rich solution, 'obs-studio' is available:"
-  # If you want to force OBS-Studio:
-  # sudo apt install -y obs-studio
-fi
+# if apt-cache show kooha &>/dev/null; then
+#   sudo apt install -y kooha
+#   echo "Installed 'kooha' as a Wayland screen recorder."
+# else
+#   # Fallback for screen recording if kooha is not found in standard repos.
+#   # obs-studio is a very powerful but heavy solution.
+#   # simpler CLI tools like grim/slurp combined with gstreamer can do video:
+#   # sudo apt install -y gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-libav
+#   echo "Kooha not found in standard repositories. Consider installing it via Flatpak or another method."
+#   echo "Alternatively, for a more feature-rich solution, 'obs-studio' is available:"
+#   # If you want to force OBS-Studio:
+#   # sudo apt install -y obs-studio
+# fi
+sudo apt install -y obs-studio
 
 # Removed 'wiremix' (custom/niche) and 'satty' (redundant with grim/slurp for basic needs).
