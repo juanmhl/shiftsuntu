@@ -6,7 +6,7 @@ set -e
 # Give people a chance to retry running the installation
 catch_errors() {
   echo -e "\n\e[31mSway WM installation failed!\e[0m"
-  echo "You can retry by running: bash ~/.local/share/your_dotfiles_repo_name/install.sh" # <--- Update path
+  echo "You can retry by running: bash ~/.local/share/shiftsuntu/install.sh" # <--- Update path
   # You might want to update this support link to your own, or remove it.
   echo "Get help or report an issue: YOUR_SUPPORT_LINK_OR_INSTRUCTIONS_HERE"
 }
@@ -15,8 +15,8 @@ trap catch_errors ERR
 
 # Install everything by sourcing individual scripts
 # IMPORTANT: Ensure your individual installation scripts are located in
-# ~/.local/share/your_dotfiles_repo_name/install/
-for f in ~/.local/share/your_dotfiles_repo_name/install/*.sh; do # <--- Update path
+# ~/.local/share/shiftsuntu/install/
+for f in ~/.local/share/shiftsuntu/install/*.sh; do # <--- Update path
   echo -e "\nRunning installer: $f"
   source "$f"
 done

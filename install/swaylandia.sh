@@ -52,3 +52,18 @@ sudo apt install -y libqalculate # Library for 'qalculate-gtk' or other calculat
 # Removed:
 # - 'hyprland-qtutils': Not applicable for Sway.
 # - 'hyprshot', 'hyprpicker', 'hyprlock', 'hypridle': Replaced by Sway equivalents or Wayland-native tools.
+
+
+
+
+echo "Installing additional applications required for Waybar click actions..."
+
+# Install network-manager-gnome for nm-connection-editor
+# This provides a graphical interface for NetworkManager connections.
+sudo apt install -y network-manager-gnome
+
+# Install pavucontrol for PulseAudio/PipeWire volume control
+# This provides a graphical mixer for sound devices.
+sudo apt install -y pavucontrol
+
+echo "Waybar click action dependencies installed."

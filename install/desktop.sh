@@ -39,6 +39,11 @@ sudo apt install -y mpv evince imv
 # 'chromium-browser' is the Chromium package in Ubuntu's repositories.
 sudo apt install -y chromium-browser
 
+# Librewolf install
+sudo apt update && sudo apt install extrepo -y
+sudo extrepo enable librewolf
+sudo apt update && sudo apt install librewolf -y
+
 # Add screen recorder based on GPU (Ubuntu equivalents)
 echo "Installing a Wayland screen recorder..."
 # 'pciutils' provides 'lspci' for hardware detection.

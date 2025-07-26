@@ -21,12 +21,11 @@ xdg-mime default imv.desktop image/tiff
 echo "Setting 'Evince' as default PDF viewer..."
 xdg-mime default org.gnome.Evince.desktop application/pdf
 
-# Set default web browser to Chromium
-# On Ubuntu, the Chromium package's desktop file is usually 'chromium-browser.desktop'.
-echo "Setting 'Chromium' as default web browser..."
-xdg-settings set default-web-browser chromium-browser.desktop # Use chromium-browser.desktop
-xdg-mime default chromium-browser.desktop x-scheme-handler/http # Use chromium-browser.desktop
-xdg-mime default chromium-browser.desktop x-scheme-handler/https # Use chromium-browser.desktop
+# Set default web browser to Firefox
+echo "Setting 'Firefox' as default web browser..."
+xdg-settings set default-web-browser firefox.desktop
+xdg-mime default firefox.desktop x-scheme-handler/http
+xdg-mime default firefox.desktop x-scheme-handler/https
 
 # Set default video player to mpv
 # We installed 'mpv' in a previous step.

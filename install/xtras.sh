@@ -1,15 +1,14 @@
 #!/bin/bash
 
-echo "Installing essential desktop applications (Calculator, Keyring, Office Suite, Obsidian, Spotify)..."
+echo "Installing essential desktop applications (Office Suite, Obsidian, Spotify)..."
 
 # Install core desktop applications from Ubuntu's standard repositories
-# - gnome-calculator: A basic graphical calculator.
-# - gnome-keyring: Essential for securely managing passwords and keys for applications.
 # - libreoffice: A complete office suite (Writer, Calc, Impress, etc.).
 sudo apt install -y \
-  gnome-calculator \
-  gnome-keyring \
   libreoffice
+
+# Note: gnome-calculator and gnome-keyring are typically already included 
+# with standard GNOME installations
 
 # Install Obsidian via Snap. Snap is a common and easy way to get popular third-party apps on Ubuntu.
 echo "Installing Obsidian via Snap..."
